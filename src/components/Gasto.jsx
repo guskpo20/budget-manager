@@ -19,26 +19,29 @@ import IconoSuscripciones from '../img/icono_suscripciones.svg';
 
 const diccionarioIconos = {
   ahorro: IconoAhorro,
-  comida: IconoCasa,
-  casa: IconoComida,
+  comida: IconoComida,
+  casa: IconoCasa,
   gastos: IconoGastos,
   ocio: IconoOcio,
   salud: IconoSalud,
   subscripciones: IconoSuscripciones,
 };
 
-const Gasto = ({ gasto }) => {
+const Gasto = ({ gasto, setGastoEditar, eliminarGasto }) => {
   const { categoria, nombre, cantidad, id, fecha } = gasto;
 
   const leadingActions = () => (
     <LeadingActions>
-      <SwipeAction onClick={() => console.log('editar')}> Editar</SwipeAction>
+      <SwipeAction onClick={() => setGastoEditar(gasto)}> Editar</SwipeAction>
     </LeadingActions>
   );
 
   const trailingActions = () => (
     <TrailingActions>
-      <SwipeAction onClick={() => console.log('Borrar')}> Borrar</SwipeAction>
+      <SwipeAction onClick={() => eliminarGasto(id)} destructive="true">
+        {' '}
+        Borrar
+      </SwipeAction>
     </TrailingActions>
   );
   return (
