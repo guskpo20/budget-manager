@@ -67,6 +67,17 @@ header h1 {
     width: 60rem;
   }
 }
+
+@media (max-width: 466px) {
+  .formulario label {
+    width: 100%;
+  }
+
+  .formulario input[type='number'] {
+    width: 100%;
+  }
+}
+
 .formulario legend {
   font-size: 3.6rem;
   text-align: center;
